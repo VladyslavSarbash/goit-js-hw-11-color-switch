@@ -39,3 +39,8 @@ function stopChangeColor() {
 }
 startBtnRef.addEventListener('click', startChangeColor);
 stopBtnRef.addEventListener('click', stopChangeColor);
+
+// function randomColor() {
+//   return `rgb(${randomIntegerFromInterval(0, 255)}, 
+//   ${randomIntegerFromInterval(0, 255)}, ${randomIntegerFromInterval(0, 255)})`;
+// }
