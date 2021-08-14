@@ -15,7 +15,7 @@ const stopBtnRef = document.querySelector('#stop');
 const bodyRef = document.querySelector('body');
 
 let changeColorId = 0;
-let changeColor = null;
+// let changeColor = null;
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -27,20 +27,14 @@ function randomColor() {
 }
 
 function startChangeColor() {
-  if (changeColor) {
-    return;
-  }
-
-  changeColor = true;
+  startBtnRef.disabled = true;
+  stopBtnRef.disabled = false;
   changeColorId = setInterval(randomColor, 1000);
 }
 
 function stopChangeColor() {
-  if (!changeColor) {
-    return;
-  }
-
-  changeColor = false;
+  startBtnRef.disabled = false;
+  stopBtnRef.disabled = true;
   clearInterval(changeColorId);
 }
 startBtnRef.addEventListener('click', startChangeColor);
